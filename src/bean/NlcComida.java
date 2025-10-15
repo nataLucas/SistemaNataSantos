@@ -2,9 +2,7 @@ package bean;
 // Generated 08/10/2025 16:36:30 by Hibernate Tools 4.3.1
 
 
-import java.math.BigDecimal;
 import java.util.Date;
-import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -29,10 +27,10 @@ public class NlcComida  implements java.io.Serializable {
      private String nlcNome;
      private String nlcSabor;
      private String nlcTipo;
-     private Integer nlcQuantidade;
+     private int nlcQuantidade;
      private Date nlcValidade;
-     private BigDecimal nlcPreco;
-     private Set nlcCompraProdutos = new HashSet(0);
+     private double nlcPreco;
+
 
     public NlcComida() {
     }
@@ -42,7 +40,7 @@ public class NlcComida  implements java.io.Serializable {
         this.nlcIdComida = nlcIdComida;
         this.nlcNome = nlcNome;
     }
-    public NlcComida(int nlcIdComida, String nlcNome, String nlcSabor, String nlcTipo, Integer nlcQuantidade, Date nlcValidade, BigDecimal nlcPreco, Set nlcCompraProdutos) {
+    public NlcComida(int nlcIdComida, String nlcNome, String nlcSabor, String nlcTipo, int nlcQuantidade, Date nlcValidade, double nlcPreco, Set nlcCompraProdutos) {
        this.nlcIdComida = nlcIdComida;
        this.nlcNome = nlcNome;
        this.nlcSabor = nlcSabor;
@@ -50,7 +48,6 @@ public class NlcComida  implements java.io.Serializable {
        this.nlcQuantidade = nlcQuantidade;
        this.nlcValidade = nlcValidade;
        this.nlcPreco = nlcPreco;
-       this.nlcCompraProdutos = nlcCompraProdutos;
     }
    
      @Id 
@@ -97,11 +94,11 @@ public class NlcComida  implements java.io.Serializable {
 
     
     @Column(name="nlc_quantidade")
-    public Integer getNlcQuantidade() {
+    public int getNlcQuantidade() {
         return this.nlcQuantidade;
     }
     
-    public void setNlcQuantidade(Integer nlcQuantidade) {
+    public void setNlcQuantidade(int nlcQuantidade) {
         this.nlcQuantidade = nlcQuantidade;
     }
 
@@ -117,25 +114,13 @@ public class NlcComida  implements java.io.Serializable {
 
     
     @Column(name="nlc_preco", precision=10)
-    public BigDecimal getNlcPreco() {
+    public double getNlcPreco() {
         return this.nlcPreco;
     }
     
-    public void setNlcPreco(BigDecimal nlcPreco) {
+    public void setNlcPreco(double nlcPreco) {
         this.nlcPreco = nlcPreco;
     }
-
-@OneToMany(fetch=FetchType.LAZY, mappedBy="nlcComida")
-    public Set getNlcCompraProdutos() {
-        return this.nlcCompraProdutos;
-    }
-    
-    public void setNlcCompraProdutos(Set nlcCompraProdutos) {
-        this.nlcCompraProdutos = nlcCompraProdutos;
-    }
-
-
-
 
 }
 

@@ -3,7 +3,6 @@ package bean;
 
 
 import java.util.Date;
-import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -30,9 +29,8 @@ public class NlcUsuarios  implements java.io.Serializable {
      private String nlcCpf;
      private Date nlcDataNascimento;
      private String nlcSenha;
-     private Integer nlcNivel;
-     private Character nlcAtivo;
-     private Set nlcCompras = new HashSet(0);
+     private int nlcNivel;
+     private String nlcAtivo;
 
     public NlcUsuarios() {
     }
@@ -42,7 +40,7 @@ public class NlcUsuarios  implements java.io.Serializable {
         this.nlcIdusuarios = nlcIdusuarios;
         this.nlcNome = nlcNome;
     }
-    public NlcUsuarios(int nlcIdusuarios, String nlcNome, String nlcApelido, String nlcCpf, Date nlcDataNascimento, String nlcSenha, Integer nlcNivel, Character nlcAtivo, Set nlcCompras) {
+    public NlcUsuarios(int nlcIdusuarios, String nlcNome, String nlcApelido, String nlcCpf, Date nlcDataNascimento, String nlcSenha, int nlcNivel, String nlcAtivo, Set nlcCompras) {
        this.nlcIdusuarios = nlcIdusuarios;
        this.nlcNome = nlcNome;
        this.nlcApelido = nlcApelido;
@@ -51,7 +49,7 @@ public class NlcUsuarios  implements java.io.Serializable {
        this.nlcSenha = nlcSenha;
        this.nlcNivel = nlcNivel;
        this.nlcAtivo = nlcAtivo;
-       this.nlcCompras = nlcCompras;
+
     }
    
      @Id 
@@ -118,31 +116,22 @@ public class NlcUsuarios  implements java.io.Serializable {
 
     
     @Column(name="nlc_nivel")
-    public Integer getNlcNivel() {
+    public int getNlcNivel() {
         return this.nlcNivel;
     }
     
-    public void setNlcNivel(Integer nlcNivel) {
+    public void setNlcNivel(int nlcNivel) {
         this.nlcNivel = nlcNivel;
     }
 
     
     @Column(name="nlc_ativo", length=1)
-    public Character getNlcAtivo() {
+    public String getNlcAtivo() {
         return this.nlcAtivo;
     }
     
-    public void setNlcAtivo(Character nlcAtivo) {
+    public void setNlcAtivo(String nlcAtivo) {
         this.nlcAtivo = nlcAtivo;
-    }
-
-@OneToMany(fetch=FetchType.LAZY, mappedBy="nlcUsuarios")
-    public Set getNlcCompras() {
-        return this.nlcCompras;
-    }
-    
-    public void setNlcCompras(Set nlcCompras) {
-        this.nlcCompras = nlcCompras;
     }
 
 

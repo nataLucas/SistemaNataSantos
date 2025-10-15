@@ -2,7 +2,7 @@ package bean;
 // Generated 08/10/2025 16:36:30 by Hibernate Tools 4.3.1
 
 
-import java.math.BigDecimal;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -24,9 +24,9 @@ public class NlcCompraProduto  implements java.io.Serializable {
      private int nlcIditemcompra;
      private NlcComida nlcComida;
      private NlcCompra nlcCompra;
-     private Integer nlcQuantidade;
-     private BigDecimal nlcPrecoUni;
-     private BigDecimal nlcDesconto;
+     private int nlcQuantidade;
+     private double nlcPrecoUni;
+     private double nlcDesconto;
 
     public NlcCompraProduto() {
     }
@@ -35,7 +35,7 @@ public class NlcCompraProduto  implements java.io.Serializable {
     public NlcCompraProduto(int nlcIditemcompra) {
         this.nlcIditemcompra = nlcIditemcompra;
     }
-    public NlcCompraProduto(int nlcIditemcompra, NlcComida nlcComida, NlcCompra nlcCompra, Integer nlcQuantidade, BigDecimal nlcPrecoUni, BigDecimal nlcDesconto) {
+    public NlcCompraProduto(int nlcIditemcompra, NlcComida nlcComida, NlcCompra nlcCompra, int nlcQuantidade, double nlcPrecoUni, double nlcDesconto) {
        this.nlcIditemcompra = nlcIditemcompra;
        this.nlcComida = nlcComida;
        this.nlcCompra = nlcCompra;
@@ -78,31 +78,31 @@ public class NlcCompraProduto  implements java.io.Serializable {
 
     
     @Column(name="nlc_quantidade")
-    public Integer getNlcQuantidade() {
+    public int getNlcQuantidade() {
         return this.nlcQuantidade;
     }
     
-    public void setNlcQuantidade(Integer nlcQuantidade) {
+    public void setNlcQuantidade(int nlcQuantidade) {
         this.nlcQuantidade = nlcQuantidade;
     }
 
     
     @Column(name="nlc_precoUni", precision=10)
-    public BigDecimal getNlcPrecoUni() {
+    public double getNlcPrecoUni() {
         return this.nlcPrecoUni;
     }
     
-    public void setNlcPrecoUni(BigDecimal nlcPrecoUni) {
+    public void setNlcPrecoUni(double nlcPrecoUni) {
         this.nlcPrecoUni = nlcPrecoUni;
     }
 
     
     @Column(name="nlc_desconto", precision=10)
-    public BigDecimal getNlcDesconto() {
+    public double getNlcDesconto() {
         return this.nlcDesconto;
     }
     
-    public void setNlcDesconto(BigDecimal nlcDesconto) {
+    public void setNlcDesconto(double nlcDesconto) {
         this.nlcDesconto = nlcDesconto;
     }
 

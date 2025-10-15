@@ -2,8 +2,8 @@ package bean;
 // Generated 08/10/2025 16:36:30 by Hibernate Tools 4.3.1
 
 
-import java.math.BigDecimal;
-import java.util.HashSet;
+
+
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -27,9 +27,8 @@ public class NlcVendedor  implements java.io.Serializable {
      private String nlcTelefone;
      private String nlcCpf;
      private String nlcTurno;
-     private BigDecimal nlcSalario;
+     private double nlcSalario;
      private String nlcEmail;
-     private Set nlcCompras = new HashSet(0);
 
     public NlcVendedor() {
     }
@@ -39,7 +38,7 @@ public class NlcVendedor  implements java.io.Serializable {
         this.nlcIdVendedor = nlcIdVendedor;
         this.nlcNome = nlcNome;
     }
-    public NlcVendedor(int nlcIdVendedor, String nlcNome, String nlcTelefone, String nlcCpf, String nlcTurno, BigDecimal nlcSalario, String nlcEmail, Set nlcCompras) {
+    public NlcVendedor(int nlcIdVendedor, String nlcNome, String nlcTelefone, String nlcCpf, String nlcTurno, double nlcSalario, String nlcEmail, Set nlcCompras) {
        this.nlcIdVendedor = nlcIdVendedor;
        this.nlcNome = nlcNome;
        this.nlcTelefone = nlcTelefone;
@@ -47,7 +46,7 @@ public class NlcVendedor  implements java.io.Serializable {
        this.nlcTurno = nlcTurno;
        this.nlcSalario = nlcSalario;
        this.nlcEmail = nlcEmail;
-       this.nlcCompras = nlcCompras;
+
     }
    
      @Id 
@@ -104,11 +103,11 @@ public class NlcVendedor  implements java.io.Serializable {
 
     
     @Column(name="nlc_salario", precision=10)
-    public BigDecimal getNlcSalario() {
+    public double getNlcSalario() {
         return this.nlcSalario;
     }
     
-    public void setNlcSalario(BigDecimal nlcSalario) {
+    public void setNlcSalario(double nlcSalario) {
         this.nlcSalario = nlcSalario;
     }
 
@@ -122,14 +121,7 @@ public class NlcVendedor  implements java.io.Serializable {
         this.nlcEmail = nlcEmail;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="nlcVendedor")
-    public Set getNlcCompras() {
-        return this.nlcCompras;
-    }
-    
-    public void setNlcCompras(Set nlcCompras) {
-        this.nlcCompras = nlcCompras;
-    }
+
 
 
 

@@ -2,9 +2,8 @@ package bean;
 // Generated 08/10/2025 16:36:30 by Hibernate Tools 4.3.1
 
 
-import java.math.BigDecimal;
+
 import java.util.Date;
-import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -32,10 +31,9 @@ public class NlcCompra  implements java.io.Serializable {
      private NlcVendedor nlcVendedor;
      private Date nlcData;
      private Date nlcDataPagamento;
-     private BigDecimal nlcTotal;
+     private double nlcTotal;
      private String nlcStatus;
      private String nlcFormaPagamento;
-     private Set nlcCompraProdutos = new HashSet(0);
 
     public NlcCompra() {
     }
@@ -44,7 +42,7 @@ public class NlcCompra  implements java.io.Serializable {
     public NlcCompra(int nlcIdCompra) {
         this.nlcIdCompra = nlcIdCompra;
     }
-    public NlcCompra(int nlcIdCompra, NlcUsuarios nlcUsuarios, NlcVendedor nlcVendedor, Date nlcData, Date nlcDataPagamento, BigDecimal nlcTotal, String nlcStatus, String nlcFormaPagamento, Set nlcCompraProdutos) {
+    public NlcCompra(int nlcIdCompra, NlcUsuarios nlcUsuarios, NlcVendedor nlcVendedor, Date nlcData, Date nlcDataPagamento, double nlcTotal, String nlcStatus, String nlcFormaPagamento, Set nlcCompraProdutos) {
        this.nlcIdCompra = nlcIdCompra;
        this.nlcUsuarios = nlcUsuarios;
        this.nlcVendedor = nlcVendedor;
@@ -53,7 +51,6 @@ public class NlcCompra  implements java.io.Serializable {
        this.nlcTotal = nlcTotal;
        this.nlcStatus = nlcStatus;
        this.nlcFormaPagamento = nlcFormaPagamento;
-       this.nlcCompraProdutos = nlcCompraProdutos;
     }
    
      @Id 
@@ -110,11 +107,11 @@ public class NlcCompra  implements java.io.Serializable {
 
     
     @Column(name="nlc_total", precision=10)
-    public BigDecimal getNlcTotal() {
+    public double getNlcTotal() {
         return this.nlcTotal;
     }
     
-    public void setNlcTotal(BigDecimal nlcTotal) {
+    public void setNlcTotal(double nlcTotal) {
         this.nlcTotal = nlcTotal;
     }
 
@@ -136,15 +133,6 @@ public class NlcCompra  implements java.io.Serializable {
     
     public void setNlcFormaPagamento(String nlcFormaPagamento) {
         this.nlcFormaPagamento = nlcFormaPagamento;
-    }
-
-@OneToMany(fetch=FetchType.LAZY, mappedBy="nlcCompra")
-    public Set getNlcCompraProdutos() {
-        return this.nlcCompraProdutos;
-    }
-    
-    public void setNlcCompraProdutos(Set nlcCompraProdutos) {
-        this.nlcCompraProdutos = nlcCompraProdutos;
     }
 
 
