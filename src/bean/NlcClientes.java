@@ -30,7 +30,7 @@ public class NlcClientes  implements java.io.Serializable {
      private String nlcCep;
      private String nlcCpf;
      private Date nlcDataNascimento;
-     private String nlcGenero;
+     private int nlcGenero;
      private String nlcTrabalhoFormal;
      private String nlcProfissao;
      private String nlcAtivo;
@@ -44,7 +44,7 @@ public class NlcClientes  implements java.io.Serializable {
         this.nlcIdClientes = nlcIdClientes;
         this.nlcNome = nlcNome;
     }
-    public NlcClientes(int nlcIdClientes, String nlcNome, String nlcEmail, String nlcTelefone, String nlcEndereco, String nlcCidade, String nlcEstado, String nlcCep, String nlcCpf, Date nlcDataNascimento, String nlcGenero, String nlcTrabalhoFormal, String nlcProfissao, String nlcAtivo, Date nlcDataCadastro) {
+    public NlcClientes(int nlcIdClientes, String nlcNome, String nlcEmail, String nlcTelefone, String nlcEndereco, String nlcCidade, String nlcEstado, String nlcCep, String nlcCpf, Date nlcDataNascimento, int nlcGenero, String nlcTrabalhoFormal, String nlcProfissao, String nlcAtivo, Date nlcDataCadastro) {
        this.nlcIdClientes = nlcIdClientes;
        this.nlcNome = nlcNome;
        this.nlcEmail = nlcEmail;
@@ -166,11 +166,11 @@ public class NlcClientes  implements java.io.Serializable {
 
     
     @Column(name="nlc_genero", length=20)
-    public String getNlcGenero() {
+    public int getNlcGenero() {
         return this.nlcGenero;
     }
     
-    public void setNlcGenero(String nlcGenero) {
+    public void setNlcGenero(int nlcGenero) {
         this.nlcGenero = nlcGenero;
     }
 
@@ -200,7 +200,7 @@ public class NlcClientes  implements java.io.Serializable {
         return this.nlcAtivo;
     }
     
-    public void setNlcAtivo(String nlcAtivo) {
+    public void setNlcAtivo( String nlcAtivo) {
         this.nlcAtivo = nlcAtivo;
     }
 

@@ -4,10 +4,7 @@
  */
 package view;
 
-/**
- *
- * @author pc
- */
+
 public class JFrmPrincipal extends javax.swing.JFrame {
 
     /**
@@ -160,7 +157,7 @@ jDlgClientes.setVisible(true);
     }//GEN-LAST:event_jMnuClientesActionPerformed
 
     private void jMnuProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMnuProdutosActionPerformed
- JDlgProdutos jDlgProdutos = new JDlgProdutos(this, true);
+ JDlgComida jDlgProdutos = new JDlgComida(this, true);
 jDlgProdutos.setVisible(true);
     }//GEN-LAST:event_jMnuProdutosActionPerformed
 
@@ -170,7 +167,7 @@ jDlgProdutos.setVisible(true);
 
     private void jMnuFuncionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMnuFuncionariosActionPerformed
         // TODO add your handling code here:
-         JDlgFuncionarios jDlgFuncionarios = new JDlgFuncionarios(this, true);
+         JDlgVendedor jDlgFuncionarios = new JDlgVendedor(this, true);
 jDlgFuncionarios.setVisible(true);
     }//GEN-LAST:event_jMnuFuncionariosActionPerformed
 

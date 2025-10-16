@@ -32,8 +32,8 @@ public class NlcCompra  implements java.io.Serializable {
      private Date nlcData;
      private Date nlcDataPagamento;
      private double nlcTotal;
-     private String nlcStatus;
-     private String nlcFormaPagamento;
+     private int nlcStatus;
+     private int nlcFormaPagamento;
 
     public NlcCompra() {
     }
@@ -42,7 +42,7 @@ public class NlcCompra  implements java.io.Serializable {
     public NlcCompra(int nlcIdCompra) {
         this.nlcIdCompra = nlcIdCompra;
     }
-    public NlcCompra(int nlcIdCompra, NlcUsuarios nlcUsuarios, NlcVendedor nlcVendedor, Date nlcData, Date nlcDataPagamento, double nlcTotal, String nlcStatus, String nlcFormaPagamento, Set nlcCompraProdutos) {
+    public NlcCompra(int nlcIdCompra, NlcUsuarios nlcUsuarios, NlcVendedor nlcVendedor, Date nlcData, Date nlcDataPagamento, double nlcTotal, int nlcStatus, int nlcFormaPagamento, Set nlcCompraProdutos) {
        this.nlcIdCompra = nlcIdCompra;
        this.nlcUsuarios = nlcUsuarios;
        this.nlcVendedor = nlcVendedor;
@@ -117,21 +117,21 @@ public class NlcCompra  implements java.io.Serializable {
 
     
     @Column(name="nlc_status", length=50)
-    public String getNlcStatus() {
+    public int getNlcStatus() {
         return this.nlcStatus;
     }
     
-    public void setNlcStatus(String nlcStatus) {
+    public void setNlcStatus(int nlcStatus) {
         this.nlcStatus = nlcStatus;
     }
 
     
     @Column(name="nlc_formaPagamento", length=50)
-    public String getNlcFormaPagamento() {
+    public int getNlcFormaPagamento() {
         return this.nlcFormaPagamento;
     }
     
-    public void setNlcFormaPagamento(String nlcFormaPagamento) {
+    public void setNlcFormaPagamento(int nlcFormaPagamento) {
         this.nlcFormaPagamento = nlcFormaPagamento;
     }
 
